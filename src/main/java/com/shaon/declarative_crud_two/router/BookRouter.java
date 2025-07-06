@@ -18,6 +18,9 @@ public class BookRouter {
                 builder -> builder
                         .GET("/find-all-book",bookHandler::findBooks)
                         .POST("/save",bookHandler::saveBook)
+                        .PUT("/update/{id}", bookHandler::updateBook)
+                        .DELETE("/delete/{id}", bookHandler::deleteBook)
+                        .GET("/find-by-id/{id}", bookHandler::findById)
         ).build();
     }
 }
